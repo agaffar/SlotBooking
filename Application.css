@@ -1,0 +1,44 @@
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+div.header {
+    padding: 1em;
+    color: white;
+    background-color: rgba(86, 107, 221, 0.76);
+    height: 50px;
+    clear: left;
+    text-align: center;
+}
+div.header h1 a
+{
+    color: white;
+    text-decoration: none;
+}
+div.menu
+{
+    height: 550px;
+    background-color: aliceblue;
+    text-align: center;
+}
+.menu button
+{
+    height: 50px;
+    width:20%;
+    background-color:#566bdd;
+    color: white;;
+}
+#menuContent
+{
+    width:50%;
+    border: 2px solid #1edda2;
+    border-radius: 12px;
+}
+div.footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}

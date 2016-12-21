@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BYSB-DashBoard</title>
+    <link rel="stylesheet" href="Application.css" type="text/css">
+    <script type="text/javascript" src="Application.js"></script>
+
+</head>
+<body onload="readData();">
+<div class="container">
+
+    <div class="header">
+        <h1> <a href="DashBoard.html">BYSB</a></h1>
+        <span>Book Your Slot in Bank</span>
+    </div>
+
+
+    <div class="menu" >
+        <button id="todaySlot"  value="todaySlot" onclick="return Redirect(this);"  >Today's Slot</button>
+        <button id="editProfile" value="editProfile" onclick="return Redirect(this);" >Profile</button>
+        <button id="slotBooking" value="slotBooking" onclick="return Redirect(this);">Book a Slot</button>
+        <button id="slotsHistory" value="slotsHistory" onclick="return Redirect(this);">Slots History</button>
+        <ul>
+            <li><p>View your slot</p></li>
+            <li><p>Note down the token id</p></li>
+            <li><p>Take a print of a copy before coming to the bank</p></li>
+            <li><p>Bring a photo Id, or government Id card</p></li>
+
+        </ul>
+        <center>
+        <div id="menuContent" >
+            <table>
+                <tr>
+                    <td>Email Id</td>
+                    <td><input type="email" id="emailId" ></td>
+                </tr>
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" id="fullName" ></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><input type="date" id="dob"></td>
+                </tr>
+                <tr>
+                    <td>Bank Name</td>
+                    <td><input type="text" id="bName"></td>
+                </tr>
+                <tr>
+                    <td>Bank Branch</td>
+                    <td><input type="text" id="bBranch"></td>
+                </tr>
+                <tr>
+                    <td>Account Number</td>
+                    <td><input type="text" id="accNum"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="text" id="mobNum"></td>
+                </tr>
+                <tr>
+                    <td>Account Type</td>
+                    <td><input type="text" id="accType"></td>
+                </tr>
+                <tr>
+                    <td>Adhar Number</td>
+                    <td><input type="text" id="adharNum"></td>
+                </tr>
+                <tr>
+                    <td>Role</td>
+                    <td><input type="text" id="role"></td>
+                </tr>
+            </table>
+        </div>
+        </center>
+
+    </div>
+
+    <div class="footer">Copyright &copy; Gaffar@semanticbits Mentor: Sridhar Thumma, 2016</div>
+
+</div>
+
+
+</body>
+</html>
