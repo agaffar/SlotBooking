@@ -38,17 +38,27 @@ function readData() {
 
     loadJSON(function (response) {
 // Parse JSON string into object
-//        var doc = document.getElementById("menuContent");
+        var table = document.getElementById("userDetails");
         var json_array = JSON.parse(response);
         console.log(json_array);
 
        /* for (var i = 0, len = json_array.user.length; i < len; ++i) {
             alert("in parsing the json");*/
-            var user = json_array.user[0].email_id;
-            alert("in parsing the json ="+user);
+            var user = json_array.user[0];
+            var userEmail = user.email_id;
+            var fullname = user.fullName;
+            var row = table.rows;
+            var columns = row[0].cells;
+            var emailId = document.createElement("INPUT");
+            emailId.type = "email";
+            emailId.id = "emailId";
+            emailId.name = "emailId";
+            emailId.value = userEmail;
+            columns[1].innerHTML = userEmail;
+        //alert("in parsing the json ="+userEmail+" name = "+fullname);
+        //document.getElementById("emailtd").innerHTML = userEmail;
+        //document.getElementById("fullName").innerHTML = fullname;
 
-        document.getElementById("emailId").innerHTML = user;
-        document.getElementById("fullName").innerHTML = user;
 
         //}
     });
