@@ -220,6 +220,10 @@ function loadCity(state)
                 var td = document.createElement("td");
                 var citySelector = document.createElement("select");
                 citySelector.id = "cityName";
+                citySelector.setAttribute("onclick","return loadBranch(this,bName);");
+                //var att =  document.createAttribute("required");
+                //citySelector.setAttributeNode(att);
+
                 var option = document.createElement("option");
                 option.setAttribute("value","- - Choose Your City - -");
                 option.text = "- - Choose Your City - -";
@@ -239,4 +243,8 @@ function loadCity(state)
         }
 
     });
+}
+function loadBranch(bank)
+{
+
 }
