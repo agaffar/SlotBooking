@@ -18,22 +18,47 @@ div.header h1 a
 }
 div.menu
 {
-    height: 550px;
+
     background-color: aliceblue;
     text-align: center;
 }
 .menu button
 {
+    border: none;
     height: 50px;
     width:20%;
     background-color:#566bdd;
-    color: white;;
+    color: white;
+
 }
 #menuContent
 {
     width:50%;
     border: 2px solid #1edda2;
     border-radius: 12px;
+}
+#menuContent input[type = submit]
+{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#menuContent input[type=text],input[type=email], input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 div.footer {
     padding: 1em;

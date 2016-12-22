@@ -1,0 +1,203 @@
+{
+  "states" : [
+    {
+      "stateName" : "andhraPradesh",
+      "cities": [
+        {
+          "cityName" : "vishakapatnam",
+          "banks": [
+            {
+              "bankName" : "sbi",
+              "branches": [
+                "sbi gaajuwaka",
+                "sbi madhurawada",
+                "sbi rishikonnd"
+              ]
+            },
+            {
+              "bankName" : "sbh",
+              "branches": [
+                "sbh gaajuwaka",
+                "sbh madhurawada",
+                "sbh ramakrishna"
+              ]
+            },
+            {
+              "bankName" : "sbm",
+              "branches": [
+                "sbm gaajuwaka",
+                "sbm madhurawada",
+                "sbm ramakrishna"
+              ]
+            }
+          ]
+        },
+        { "cityName" : "vijayawada",
+          "banks": [
+            {
+              "bankName" : "sbi",
+              "branches": [
+                "sbi autonagar",
+                "sbi benj circle",
+                "sbi ntr circle"
+              ]
+            },
+            {
+              "bankName" : "sbh",
+              "branches": [
+                "sbh autonagar",
+                "sbh benj circle",
+                "sbh ntr circle"
+              ]
+            },
+            {
+              "bankName" : "sbm",
+              "branches": [
+                "sbm autonagar",
+                "sbm benj circle",
+                "sbm ntr circle"
+              ]
+            }
+          ]
+        },
+        {
+          "cityName" : "rajhamundry",
+          "banks": [
+            {
+              "bankName" : "sbi",
+              "branches": [
+                "sbi athreyapuram",
+                "sbi pasallapudi",
+                "sbi ramachandrapuram"
+              ]
+            },
+            {
+              "bankName" : "sbh",
+              "branches": [
+                "sbh athreyapuram",
+                "sbh pasallapudi",
+                "sbh ramachandrapuram"
+              ]
+            },
+            {
+              "bankName" : "sbm",
+              "branches": [
+                "sbm autonagar",
+                "sbm benj circle",
+                "sbm ntr circle"
+              ]
+            }
+          ]
+        },
+        {
+          "cityName" : "guntur",
+          "banks": [
+            {
+              "bankName" : "sbi",
+              "branches": [
+                "sbi tenali",
+                "sbi bapatla",
+                "sbi bradipeta"
+              ]
+            },
+            {
+              "bankName" : "sbh",
+              "branches": [
+                "sbh tenali",
+                "sbh bapatla",
+                "sbh bradipeta"
+              ]
+            },
+            {
+              "bankName" : "sbm",
+              "branches": [
+                "sbm autonagar",
+                "sbm benj circle",
+                "sbm ntr circle"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stateName" : "telangana",
+      "cities" : [
+        {
+         "cityName" : "hyderabad",
+          "banks" : [
+            {
+              "bankName" : "sbi",
+              "branches" : [
+                "sbi hitech city",
+                "sbi kukatpally",
+                "sbi mothinagar"
+              ]
+
+            },
+            {
+              "bankName" : "sbh",
+              "branches" : [
+                "sbh hitech city",
+                "sbh kukatpally",
+                "sbh mothinagar"
+              ]
+
+            },
+            {
+              "bankName" : "sbi",
+              "branches" : [
+                "sbm hitech city",
+                "sbm kukatpally",
+                "sbm mothinagar"
+              ]
+
+            }
+          ]
+        },
+        {
+         "cityName" : "secunderabad",
+          "banks" : [
+            {
+              "bankName" : "sbi",
+              "branches" : [
+                "sbi patnee",
+                "sbi rtc cross roads",
+                "sbi ecl"
+              ]
+
+            },
+            {
+              "bankName" : "sbh",
+              "branches" : [
+                "sbh patnee",
+                "sbh rtc cross roads",
+                "sbh ecl"
+              ]
+
+            },
+            {
+              "bankName" : "sbi",
+              "branches" : [
+                "sbm patnee",
+                "sbm rtc cross roads",
+                "sbm ecl"
+              ]
+
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stateName" : "tamilNadu",
+      "cities" : [
+        "chennai",
+        "kanchi",
+        "trichunapally",
+        "coimbatore"
+      ]
+    }
+  ]
+
+}

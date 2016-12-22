@@ -2,7 +2,7 @@
  "user" :[
    {"email_id": "abdulgaffar09@gmail.com",
      "fullName": "Abdul Gaffar",
-     "date_of-Birth": "19-Apr-1994",
+     "dateOfBirth": "1994-04-19",
      "bankName": "SBI",
      "bankBranch": "Cybergateway",
      "accountNumber" : "0321321",
@@ -14,7 +14,7 @@
 
    {"email_id": "abdulgaffar0160@gmail.com",
      "fullName": "Gaffar Abdul",
-     "date_of-Birth": "19-Apr-1994",
+     "dateOfBirth": "1994-04-19",
      "bankName": "axis",
      "bankBranch": "madhapur",
      "accountNumber" : "987654",

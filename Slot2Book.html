@@ -21,6 +21,7 @@
         <button id="editProfile" value="editProfile" onclick="return Redirect(this);" >Profile</button>
         <button id="slotBooking" value="slotBooking" onclick="return Redirect(this);">Book a Slot</button>
         <button id="slotsHistory" value="slotsHistory" onclick="return Redirect(this);">Slots History</button>
+        <p> Caution </p>
         <ul>
             <li><p>View your slot</p></li>
             <li><p>Note down the token id</p></li>
@@ -28,30 +29,78 @@
             <li><p>Bring a photo Id, or government Id card</p></li>
 
         </ul>
-        <center><div id="menuContent">
-            <table>
-                <tr>
-                    <td>Token Number</td>
-                    <td>BYSBTock1231</td>
-                </tr>
-                <tr>
-                    <td>Bank Name</td>
-                    <td>Sbi</td>
-                </tr>
-                <tr>
-                    <td>Branch</td>
-                    <td>Hitech Branch</td>
-                </tr>
-                <tr>
-                    <td>Window Number</td>
-                    <td>Window1</td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td>2:00PM</td>
-                </tr>
-            </table>
-        </div>
+        <p> Fill your details and click on Book </p>
+
+        <center>
+            <div id="menuContent" >
+                <form id="slotBook" name="slotBook" onsubmit="">
+                    <table id="slotRequire">
+                        <tr>
+                            <td>Customer Name</td>
+                            <td><input type="text" id="cname" name="cname" required ></td>
+                        </tr>
+                        <tr>
+                            <td>Account Number</td>
+                            <td><input type="text" id="accNum" name="accNum" required ></td>
+                        </tr>
+                        <tr id="statesRow">
+                        <td>State</td>
+                        <td><Select id="state" name="state" required onchange="return loadCity(this);">
+                            <option value="1">- - Choose Your State - -</option>
+                            <option value="andhraPradesh">Andhra Pradesh</option>
+                            <option value="telangana">Telangana</option>
+                            <option value="tamilNadu">Tamil Nadu</option>
+                        </Select></td>
+                        </tr>
+                        <tr id="cityRow">
+                        <td>City</td>
+                        <td><Select id="city" name="city" required onchange="return loadBranch(this,bName);">
+                            <option value="-1">- - Choose Your City - -</option>
+                        </Select></td>
+                        </tr>
+                        <tr>
+                            <td>Bank Name (in your selected location)</td>
+                            <td><Select id="bName" name="bName" required onchange="return loadBranch(city,this);">
+                                <option value="-1">- - Choose Your Bank - -</option>
+                                <option value="sbi">State Bank of India</option>
+                                <option value="sbh">State Bank of Hyderabad</option>
+                                <option value="sbm">State Bank of Mysore</option>
+                                <option value="andhraBank">Andhra Bank</option>
+                                <option value="axis">Axis Bank</option>
+                                <option value="hdfc">HDFC Bank</option>
+                                <option value="punjabNational">Punjab National Bank</option>
+                                <option value="icici">ICICI Bank</option>
+
+                            </Select></td>
+                        </tr>
+                        <tr>
+
+                        <tr>
+                            <td>Branch</td>
+                            <td><Select id="bBranch" name="bBranch" required onchange="">
+                            <option value="-1">- - Choose Your Branch - -</option>
+                            <option value="sbi">State Bank of India</option>
+                            <option value="sbh">State Bank of Hyderabad</option>
+                            <option value="sbm">State Bank of Mysore</option>
+                                </Select>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Email Id</td>
+                            <td><input type="email" id="emailId" name="emailId" required ></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Number</td>
+                            <td><input type="number" id="mobnum" name="mobnum" required ></td>
+                        </tr>
+                        <tr>
+                            <td>Adhar Number</td>
+                            <td><input type="number" id="adhNum" name="adhNum" required ></td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Book">
+                </form>
+            </div>
         </center>
 
     </div>
