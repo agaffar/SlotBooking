@@ -45,7 +45,7 @@
                         </tr>
                         <tr id="statesRow">
                         <td>State</td>
-                        <td><Select id="state" name="state" required onchange="return loadCity(this);">
+                        <td><Select id="state" name="state" required onchange="return loadCity(this); required ">
                             <option value="1">- - Choose Your State - -</option>
                             <option value="andhraPradesh">Andhra Pradesh</option>
                             <option value="telangana">Telangana</option>
@@ -54,13 +54,13 @@
                         </tr>
                         <tr id="cityRow">
                         <td>City</td>
-                        <td><Select id="city" name="city" required onchange="return loadBranch(this,bName);">
+                        <td><Select id="city" name="city" required onchange="return loadBranch(state,this,bName);">
                             <option value="-1">- - Choose Your City - -</option>
                         </Select></td>
                         </tr>
                         <tr>
                             <td>Bank Name (in your selected location)</td>
-                            <td><Select id="bName" name="bName" required onchange="return loadBranch(this);">
+                            <td><Select id="bName" name="bName" required onchange="return loadBranch(state,cityName,this);">
                                 <option value="-1">- - Choose Your Bank - -</option>
                                 <option value="sbi">State Bank of India</option>
                                 <option value="sbh">State Bank of Hyderabad</option>

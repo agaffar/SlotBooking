@@ -220,9 +220,9 @@ function loadCity(state)
                 var td = document.createElement("td");
                 var citySelector = document.createElement("select");
                 citySelector.id = "cityName";
-                citySelector.setAttribute("onclick","return loadBranch(this,bName);");
-                //var att =  document.createAttribute("required");
-                //citySelector.setAttributeNode(att);
+                citySelector.setAttribute("onchange","return loadBranch(state,this,bName);");
+                var att =  document.createAttribute("required");
+                citySelector.setAttribute("required","true");
 
                 var option = document.createElement("option");
                 option.setAttribute("value","- - Choose Your City - -");
@@ -244,7 +244,51 @@ function loadCity(state)
 
     });
 }
-function loadBranch(bank)
+function loadBranch(state,cityName,bank)
 {
+    loadJSONState(function (response) {
+// Parse JSON string into object
+        var table = document.getElementById("userDetails");
+        var json_array = JSON.parse(response);
+        console.log(json_array);
+        var statesArray = json_array.states;
+        console.log(statesArray+"    len "+statesArray.length);
+        var table = document.getElementById("slotRequire");
 
+        for(var i=0; i< statesArray.length;i++)
+        {
+
+            var statesel = statesArray[i].stateName;
+            var citiesState = statesArray[i].cities;
+            if(statesel.toString() == state.value)
+            {
+                var rows = table.rows;
+                var columns = rows[5].cells;
+                var td = document.createElement("td");
+                var branchSelector = document.createElement("select");
+                branchSelector.id = "bBranch";
+                branchSelector.setAttribute("onchange","");
+                branchSelector.setAttribute("required","true");
+
+                var option = document.createElement("option");
+                option.setAttribute("value","- - Choose Your City - -");
+                option.text = "- - Choose Your City - -";
+                branchSelector.appendChild(option);
+                for(var j=0;j<citiesState.length;j++)
+                {
+
+                    var option = document.createElement("option");
+                    console.log(citiesState[j].cityName+"=  citiesState[j].cityName");
+                    option.setAttribute("value",citiesState[j].cityName);
+                    option.text = citiesState[j].cityName;
+                    branchSelector.appendChild(option);
+                }
+                td.appendChild(branchSelector);
+                var parnode = columns[1].parentNode;
+                parnode.replaceChild(td,columns[1]);
+            }
+        }
+
+    });
+    return false;
 }
