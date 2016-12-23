@@ -145,7 +145,7 @@
 
             },
             {
-              "bankName" : "sbi",
+              "bankName" : "sbm",
               "branches" : [
                 "sbm hitech city",
                 "sbm kukatpally",
@@ -192,10 +192,61 @@
     {
       "stateName" : "tamilNadu",
       "cities" : [
-        "chennai",
-        "kanchi",
-        "trichunapally",
-        "coimbatore"
+        {
+          "cityName" :  "chennai",
+          "banks" : [
+            {
+              "bankName" : "sbi",
+              "branches" : [
+                "sbi pheonix area",
+                "sbi kumbakonam"
+              ]
+            },
+            {
+              "bankName" : "sbh",
+              "branches" : [
+                "sbh pheonix area",
+                "sbh kumbakonam"
+              ]
+            },
+            {
+              "bankName" : "sbm",
+              "branches" : [
+                "sbm pheonix area",
+                "sbm kumbakonam"
+              ]
+            }
+          ]
+        },
+        {
+          "cityName" : "kanchi",
+          "banks" : [
+            {
+              "bankName" : "sbi",
+              "branches" : [
+                "sbi madhurai",
+                "sbi pondicherry road"
+              ]
+            },
+            {
+              "bankName" : "sbh",
+              "branches" : [
+                "sbh madhurai",
+                "sbh pondicherry road"
+              ]
+            },
+            {
+              "bankName" : "sbm",
+              "branches" : [
+                "sbm madhurai",
+                "sbm pondicherry road"
+              ]
+            }
+          ]
+
+        }
+
+
       ]
     }
   ]

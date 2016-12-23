@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BYSB-DashBoard</title>
+    <link rel="stylesheet" href="Application.css" type="text/css">
+    <script type="text/javascript" src="Application.js"></script>
+    <script type="text/javascript" src="Validation.js"></script>
+
 </head>
-<body>
-<p>Slot Booking</p>
+<body >
+<div class="container">
+    <div class="header">
+        <h1> <a href="DashBoard.html">BYSB</a><br> <span>Book Your Slot in Bank </span></h1><br><br>
+
+    </div><!--
+    --><div class="menu" >
+    <br>
+        <ul>
+            <li><p>View your slot</p></li>
+            <li><p>Note down the token id</p></li>
+            <li><p>Take a print of a copy before coming to the bank</p></li>
+            <li><p>Bring a photo Id, or government Id card</p></li>
+        </ul>
+    <br>
+        <center>
+            <div class="login">
+                <form name="myform" onsubmit="return validation()">
+                    <br>
+                    <label for="fname">Username</label>&nbsp;&nbsp;&nbsp;
+                  <input type="email" name="fname" id="fname" placeholder="Username" onblur="return validate();" required/><br><br>
+                    <label for="pwd">Password</label>&nbsp;&nbsp;&nbsp;
+                    <input type="password" id="pwd" name="pwd" required ><br>
+                    <span id="error"></span>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </center>
+    </div>
+    <div class="footer">Copyright &copy; Gaffar@semanticbits Mentor: Sridhar Thumma, 2016</div>
+</div>
 </body>
 </html>

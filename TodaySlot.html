@@ -7,16 +7,14 @@
     <script type="text/javascript" src="Application.js"></script>
 
 </head>
-<body >
+<body onload="return loadSlotData()" >
 <div class="container">
 
     <div class="header">
-        <h1> <a href="DashBoard.html">BYSB</a></h1>
-        <span>Book Your Slot in Bank</span>
-    </div>
+        <h1> <a href="DashBoard.html">BYSB</a><br> <span>Book Your Slot in Bank </span></h1><br><br>
 
-
-    <div class="menu" >
+    </div><!--
+    --><div class="menu" >
         <button id="todaySlot"  value="todaySlot" onclick="return Redirect(this);"  >Today's Slot</button>
         <button id="editProfile" value="editProfile" onclick="return Redirect(this);" >Profile</button>
         <button id="slotBooking" value="slotBooking" onclick="return Redirect(this);">Book a Slot</button>

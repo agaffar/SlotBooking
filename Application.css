@@ -7,23 +7,48 @@ div.header {
     padding: 1em;
     color: white;
     background-color: rgba(86, 107, 221, 0.76);
-    height: 50px;
+    height: 80px;
     clear: left;
     text-align: center;
+}
+div.header  button
+{
+
+    border: none;
+    height: 28px;
+    width:10%;
+    background-color:#566bdd;
+    color: white;
+    float: right;
+
 }
 div.header h1 a
 {
     color: white;
     text-decoration: none;
 }
+div.header span
+{
+    color: white;
+    font-size: large;
+}
 div.menu
 {
+    padding-top : 1px;
+    min-height: 500px;
+    margin:0px;outline:none;
 
     background-color: aliceblue;
     text-align: center;
 }
+div.menu ul
+{
+    text-align: left;
+}
+
 .menu button
 {
+
     border: none;
     height: 50px;
     width:20%;
@@ -37,7 +62,34 @@ div.menu
     border: 2px solid #1edda2;
     border-radius: 12px;
 }
-#menuContent input[type = submit]
+div.login
+{
+
+    width:50%;
+    border: 2px solid #1edda2;
+    border-radius: 12px;
+}
+div.login input[type=email],input[type=password] {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+div.login input[type=submit] {
+
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#menuContent  input[type = submit]
 {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -51,7 +103,7 @@ div.menu
     cursor: pointer;
     border-radius: 4px;
 }
-#menuContent input[type=text],input[type=email], input[type=number], select {
+#menuContent input[type=text],input[type=email], input[type=number], input[type=date], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

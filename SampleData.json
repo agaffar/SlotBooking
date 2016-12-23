@@ -9,7 +9,10 @@
      "mobileNumber" : 9885553785,
      "accountType" : "Saving",
      "adharNumber" : 8403804,
-     "role" : "customer"
+     "role" : "customer",
+     "slots" :[
+
+     ]
    },
 
    {"email_id": "abdulgaffar0160@gmail.com",
@@ -21,7 +24,10 @@
      "mobileNumber" : 9885553785,
      "accountType" : "Saving",
      "adharNumber" : 23456,
-     "role" : "customer"
+     "role" : "customer",
+     "slots" :[
+
+     ]
    }
  ]
 }

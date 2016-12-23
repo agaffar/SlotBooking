@@ -11,12 +11,10 @@
 <div class="container">
 
     <div class="header">
-        <h1> <a href="DashBoard.html">BYSB</a></h1>
-        <span>Book Your Slot in Bank</span>
-    </div>
+        <h1> <a href="DashBoard.html">BYSB</a><br> <span>Book Your Slot in Bank </span></h1><br><br>
 
-
-    <div class="menu" >
+    </div><!--
+    --><div class="menu" >
         <button id="todaySlot"  value="todaySlot" onclick="return Redirect(this);"  >Today's Slot</button>
         <button id="editProfile" value="editProfile" onclick="return Redirect(this);" >Profile</button>
         <button id="slotBooking" value="slotBooking" onclick="return Redirect(this);">Book a Slot</button>
@@ -33,7 +31,7 @@
 
         <center>
             <div id="menuContent" >
-                <form id="slotBook" name="slotBook" onsubmit="">
+                <form id="slotBook" name="slotBook" >
                     <table id="slotRequire">
                         <tr>
                             <td>Customer Name</td>
@@ -74,11 +72,9 @@
                             </Select></td>
                         </tr>
                         <tr>
-
-                        <tr>
                             <td>Branch</td>
                             <td><Select id="bBranch" name="bBranch" required onchange="">
-                            <option value="-1">- - Choose Your Branch - -</option>
+                            <option value="-1">- - Choose Your Bank Branch - -</option>
                             <option value="sbi">State Bank of India</option>
                             <option value="sbh">State Bank of Hyderabad</option>
                             <option value="sbm">State Bank of Mysore</option>
@@ -98,9 +94,10 @@
                             <td><input type="number" id="adhNum" name="adhNum" required ></td>
                         </tr>
                     </table>
-                    <input type="submit" value="Book">
+                    <input type="button" value="Book" onclick="bookDSlot();">
                 </form>
             </div>
+            <span id="link"></span>
         </center>
 
     </div>
