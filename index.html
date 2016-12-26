@@ -25,14 +25,14 @@
     <br>
         <center>
             <div class="login">
-                <form name="myform" onsubmit="return validation()">
+                <form name="myform" onsubmit="">
                     <br>
                     <label for="fname">Username</label>&nbsp;&nbsp;&nbsp;
                   <input type="email" name="fname" id="fname" placeholder="Username" onblur="return validate();" required/><br><br>
                     <label for="pwd">Password</label>&nbsp;&nbsp;&nbsp;
                     <input type="password" id="pwd" name="pwd" required ><br>
                     <span id="error"></span>
-                    <input type="submit" value="Login">
+                    <input type="button" value="Login" onclick="return validation()" >
                 </form>
             </div>
         </center>
