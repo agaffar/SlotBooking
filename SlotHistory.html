@@ -7,11 +7,12 @@
     <script type="text/javascript" src="Application.js"></script>
 
 </head>
-<body >
+<body onload="return ShowSlots()">
 <div class="container">
 
     <<div class="header">
-    <h1> <a href="DashBoard.html">BYSB</a><br> <span>Book Your Slot in Bank </span></h1><br><br>
+    <h1> <a href="DashBoard.html">BYSB</a><br> <span>Book Your Slot in Bank </span></h1>
+    <button id="logout" value="logout" onclick="return Redirect(this);">logout</button><br><br>
 
 </div><!--
     --><div class="menu" >
@@ -27,27 +28,22 @@
 
         </ul>
         <center><div id="menuContent">
-            <table>
-                <tr>
-                    <td>Token Number</td>
-                    <td>BYSBTock1231</td>
-                </tr>
-                <tr>
-                    <td>Bank Name</td>
-                    <td>Sbi</td>
-                </tr>
-                <tr>
-                    <td>Branch</td>
-                    <td>Hitech Branch</td>
-                </tr>
-                <tr>
-                    <td>Window Number</td>
-                    <td>Window1</td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td>2:00PM</td>
-                </tr>
+            <table id="slotsBooked">
+                <thead>
+                <th>
+                    Token
+                </th>
+                <th>
+                    Date of slot
+                </th>
+                <th>
+                    Bank Name
+                </th>
+                <th>
+                    Branch
+                </th>
+                </thead>
+
             </table>
         </div>
         </center>

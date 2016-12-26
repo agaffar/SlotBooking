@@ -28,6 +28,24 @@
      "slots" :[
 
      ]
+   },
+   {"email_id": "empAdmin@gmail.com",
+     "fullName": "emp Admin",
+     "dateOfBirth": "1994-04-19",
+     "bankName": "SBI",
+     "bankBranch": "Cybergateway",
+     "accountNumber" : "0321321",
+     "mobileNumber" : 9885553785,
+     "accountType" : "Saving",
+     "adharNumber" : 8403804,
+     "chamber Number" : "chamb1",
+     "role" : "employee",
+     "slots" :[
+       {
+         "token" : "",
+         "slotDateTime" : ""
+       }
+     ]
    }
  ]
 }

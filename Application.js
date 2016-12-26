@@ -36,7 +36,7 @@ function getLoginData()
     var user = localStorage.getItem("userEmailId");
     var userLabel = document.createElement("label");
     userLabel.innerHTML = user;
-    document.getElementById("logout").appendChild(userLabel);
+    document.getElementById("user").innerHTML = user;
 }
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
@@ -57,13 +57,23 @@ function readData() {
 // Parse JSON string into object
         var table = document.getElementById("userDetails");
         var json_array = JSON.parse(response);
-        localStorage.setItem("jsonObject", JSON.stringify(json_array));
+        if(!localStorage.hasOwnProperty("jsonObject"))
+        {
+            localStorage.setItem("jsonObject", JSON.stringify(json_array));
+        }
+        else
+        {
+            json_array = JSON.parse(localStorage.getItem("jsonObject"));
+        }
         console.log(json_array);
 
         for (var i = 0, len = json_array.user.length; i < len; ++i) {
             //alert("in parsing the json");
-            var user = json_array.user[i];
             var userEmailId = localStorage.getItem("userEmailId");
+
+            var user = json_array.user[i];
+            console.log("iiiiiiiiii = "+user.email_id+" userEmailId= "+userEmailId);
+
             if(user.email_id == userEmailId)
             {
                 var row = table.rows;
@@ -464,4 +474,50 @@ function GetUsersJson()
         console.log(jsonObject);
     });
     return false;
+}
+function ShowSlots()
+{
+    var userEmailId = localStorage.getItem("userEmailId");
+    loadJSON(function(response){
+        var json_array = JSON.parse(response);
+        var table = document.getElementById("slotsBooked");
+        if(!localStorage.hasOwnProperty("jsonObject"))
+        {
+            localStorage.setItem("jsonObject", JSON.stringify(json_array));
+        }
+        else
+        {
+            json_array = JSON.parse(localStorage.getItem("jsonObject"));
+        }
+        console.log(json_array);
+        for(var i=0;i<json_array.user.length;i++)
+        {
+            var user = json_array.user[i];
+            if(user.email_id == userEmailId)
+            {
+                var slots = user.slots;
+                var tr = document.createElement("tr");
+                for(var j=0;j<slots.length;j++)
+                {
+                    var slotRow = slots[j];
+                    var td1 = document.createElement("td");
+                    td1.innerHTML = slotRow.tokenId;
+                    tr.appendChild(td1);
+                    var td2 = document.createElement("td");
+                    td2.innerHTML = slotRow.slotDateTime;
+                    tr.appendChild(td2);
+                    var td3 = document.createElement("td");
+                    td3.innerHTML = slotRow.custBank;
+                    tr.appendChild(td3);
+                    var td4 = document.createElement("td");
+                    td4.innerHTML = slotRow.custBankBranch;
+                    tr.appendChild(td4);
+                    table.appendChild(tr);
+                }
+
+            }
+        }
+
+    });
+
 }

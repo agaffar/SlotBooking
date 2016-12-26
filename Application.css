@@ -9,9 +9,20 @@ div.header {
     background-color: rgba(86, 107, 221, 0.76);
     height: 80px;
     clear: left;
+}
+div.header h1{
     text-align: center;
 }
-div.header  button
+div.header label{
+    border: none;
+    height: 28px;
+    width:10%;
+    background-color:#566bdd;
+    color: white;
+    float: right;
+
+}
+div.header button
 {
 
     border: none;
@@ -89,7 +100,24 @@ div.login input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-#menuContent  input[type = submit]
+
+table#slotsBooked {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+table#slotsBooked th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+table#slotsBooked tr:nth-child(even){background-color: #f2f2f2}
+
+table#slotsBooked th {
+    background-color: #0489af;
+    color: white;
+}
+#menuContent  input[type = submit],input[type = button]
 {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -104,7 +132,7 @@ div.login input[type=submit] {
     border-radius: 4px;
 }
 #menuContent input[type=text],input[type=email], input[type=number], input[type=date], select {
-    width: 100%;
+    width: 110%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
