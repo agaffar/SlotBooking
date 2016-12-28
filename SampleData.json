@@ -11,7 +11,32 @@
      "adharNumber" : 8403804,
      "role" : "customer",
      "slots" :[
-
+       {
+         "accNumber" : "123456789",
+         "custBank" : "sbi",
+         "custBankBranch" : "sbi gaajuwaka",
+         "custName" : "abdulgaffar",
+         "custadhNum" : "2345",
+         "custemailId" : "abdulgaffar09@gmail.com",
+         "custmobnum" : "123456",
+         "custstate" :  "andhraPradesh",
+         "slotDateTime" : "2016-12-28",
+         "tokenId" : "28sbi2345",
+         "chamberNumber":"chamb1"
+       },
+       {
+         "accNumber" : "123456789",
+         "custBank" : "sbi",
+         "custBankBranch" : "sbi gaajuwaka",
+         "custName" : "abdulgaffar",
+         "custadhNum" : "2345",
+         "custemailId" : "abdulgaffar09@gmail.com",
+         "custmobnum" : "123456",
+         "custstate" :  "andhraPradesh",
+         "slotDateTime" : "2016-12-26",
+         "tokenId" : "26sbi2345",
+         "chamberNumber":"chamb2"
+       }
      ]
    },
 
@@ -26,11 +51,36 @@
      "adharNumber" : 23456,
      "role" : "customer",
      "slots" :[
-
+       {
+         "accNumber" : "123456789",
+         "custBank" : "sbi",
+         "custBankBranch" : "sbi gaajuwaka",
+         "custName" : "abdul gaffar",
+         "custadhNum" : "2345",
+         "custemailId" : "abdulgaffar0160@gmail.com",
+         "custmobnum" : "123456",
+         "custstate" :  "andhraPradesh",
+         "slotDateTime" : "2016-12-28",
+         "tokenId" : "28sbi23451",
+         "chamberNumber":"chamb1"
+       },
+       {
+         "accNumber" : "123456789",
+         "custBank" : "sbi",
+         "custBankBranch" : "sbi gaajuwaka",
+         "custName" : "abdulgaffar",
+         "custadhNum" : "2345",
+         "custemailId" : "abdulgaffar0160@gmail.com",
+         "custmobnum" : "123456",
+         "custstate" :  "andhraPradesh",
+         "slotDateTime" : "2016-12-26",
+         "tokenId" : "26sbi2345",
+         "chamberNumber":"chamb2"
+       }
      ]
    },
-   {"email_id": "empAdmin@gmail.com",
-     "fullName": "emp Admin",
+   {"email_id": "empAdmin1@gmail.com",
+     "fullName": "emp Admin1",
      "dateOfBirth": "1994-04-19",
      "bankName": "SBI",
      "bankBranch": "Cybergateway",
@@ -38,12 +88,38 @@
      "mobileNumber" : 9885553785,
      "accountType" : "Saving",
      "adharNumber" : 8403804,
-     "chamber Number" : "chamb1",
      "role" : "employee",
+     "chamberNumber" : "chamb1",
      "slots" :[
        {
-         "token" : "",
-         "slotDateTime" : ""
+         "tokenId" : "26sbi2345",
+         "slotDateTime" : "2016-12-26"
+       },
+       {
+         "tokenId" : "28sbi23451",
+         "slotDateTime" : "2016-12-28"
+       }
+     ]
+   },
+   {"email_id": "empAdmin2@gmail.com",
+     "fullName": "emp Admin2",
+     "dateOfBirth": "1994-04-19",
+     "bankName": "SBI",
+     "bankBranch": "Cybergateway",
+     "accountNumber" : "0321321",
+     "mobileNumber" : 9885553785,
+     "accountType" : "Saving",
+     "adharNumber" : 8403804,
+     "role" : "employee",
+     "chamberNumber" : "chamb2",
+     "slots" :[
+       {
+         "tokenId" : "26sbi2345",
+         "slotDateTime" : "2016-12-26"
+       },
+       {
+         "tokenId" : "28sbi23451",
+         "slotDateTime" : "2016-12-28"
        }
      ]
    }

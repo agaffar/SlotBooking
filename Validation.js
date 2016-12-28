@@ -56,6 +56,8 @@ function validation(){
                     if(user.email_id == val1.value)
                     {
                         localStorage.setItem("userEmailId",val1.value);
+                        localStorage.setItem("userRole",user.role);
+
                         if(user.role == "employee")
                         {
                             console.log("employee");
@@ -94,4 +96,8 @@ function validate()
 
     }
     return false;
+}
+function registerValidation()
+{
+
 }

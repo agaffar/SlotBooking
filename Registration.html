@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>BYSB-DashBoard</title>
+    <link rel="stylesheet" href="Application.css" type="text/css">
+    <script type="text/javascript" src="Application.js"></script>
+    <script type="text/javascript" src="Validation.js"></script>
+    <script type="text/javascript" src="RegValidation.js"></script>
+
+</head>
+<body >
+<div class="container">
+    <div class="header">
+        <h1> <a href="DashBoard.html">BYSB</a><br> <span>Book Your Slot in Bank </span></h1><br><br>
+
+    </div><!--
+    --><div class="menu" >
+    <br>
+    <ul>
+        <li><p>View your slot</p></li>
+        <li><p>Note down the token id</p></li>
+        <li><p>Take a print of a copy before coming to the bank</p></li>
+        <li><p>Bring a photo Id, or government Id card</p></li>
+    </ul>
+    <br>
+    <center>
+        <div class="registerForm">
+            <form name="myForm" onsubmit="">
+                <table id="regForm" >
+                    <tr>
+                        <td>Email Id</td>
+                        <td ><input type="email" name="emailid" id="emailId" required><span id="emailErr"></span></td>
+
+                    </tr>
+                    <tr>
+                        <td>Full Name</td>
+                        <td><input type="text" id="fullName" name="fullName" required></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td><input type="date" id="dob" required></td>
+                    </tr>
+                    <tr>
+                        <td>Bank Name</td>
+                        <td><input type="text" id="bName" required></td>
+                    </tr>
+                    <tr>
+                        <td>Bank Branch</td>
+                        <td><input type="text" id="bBranch" required></td>
+                    </tr>
+                    <tr>
+                        <td>Account Number</td>
+                        <td><input type="text" id="accNum" required></td>
+                    </tr>
+                    <tr>
+                        <td>Account Type</td>
+                        <td><input type="text" id="accType" name="accType" required></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number</td>
+                        <td><input type="text" id="mobNum" name="mobNum" required></td>
+                    </tr>
+                    <tr>
+                        <td>Adhar Number</td>
+                        <td><input type="text" id="adharNum" name="adharNum" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" id="pwd" name="pwd" required></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password</td>
+                        <td><input type="password" id="cnfpwd" name="cnfpwd" required></td>
+                    </tr>
+                </table>
+
+                <input type="button" value="register"  onclick="return regValidation()">
+                <input type="button" value="Already Registered?Login here!" onclick="location.href='index.html'" >
+            </form>
+        </div>
+    </center>
+</div>
+    <div class="footer">Copyright &copy; Gaffar@semanticbits Mentor: Sridhar Thumma, 2016</div>
+</div>
+</body>
+</html>

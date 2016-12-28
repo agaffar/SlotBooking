@@ -1,14 +1,44 @@
 /**
  * Created by Lenovo on 12/21/2016.
  */
+
 function Redirect(menuClicked)
 {
+    if(menuClicked.value == "noOperations")
+    {
+        if(localStorage.getItem("userRole") == "employee")
+        {
+            window.location.href='EmployeeDashBoard.html';
+
+        }
+        else
+        {
+            window.location.href='TodaySlot.html';
+        }
+    }
     if(menuClicked.value == "todaySlot")
     {
-        window.location.href='TodaySlot.html';
+        if(localStorage.getItem("userRole") == "employee")
+            {
+            window.location.href='EmployeeDashBoard.html';
+
+            }
+        else
+            {
+                window.location.href='TodaySlot.html';
+            }
+
     }
     else if(menuClicked.value == "editProfile"){
-        window.location.href='Profile.html';
+        if(localStorage.getItem("userRole") == "employee")
+        {
+            window.location.href='EmployeeProfile.html';
+
+        }
+        else
+        {
+            window.location.href='Profile.html';
+        }
 
     }
     else if(menuClicked.value == "slotBooking"){
@@ -24,6 +54,7 @@ function Redirect(menuClicked)
         if(localStorage.hasOwnProperty("userEmailId"))
         {
             localStorage.removeItem("userEmailId");
+            //localStorage.clear();
         }
     window.location.href='index.html';
 
@@ -72,11 +103,62 @@ function readData() {
             var userEmailId = localStorage.getItem("userEmailId");
 
             var user = json_array.user[i];
-            console.log("iiiiiiiiii = "+user.email_id+" userEmailId= "+userEmailId);
+            //console.log("iiiiiiiiii = "+user.email_id+" userEmailId= "+userEmailId);
 
             if(user.email_id == userEmailId)
             {
-                var row = table.rows;
+                var table = document.getElementById("userDetails");
+                var k=0;
+                for(var key in user)
+                {
+                    //for (var k = 0, row; row = table.rows[k]; k++) {
+                        //iterate through rows
+                        //rows would be accessed using the "row" variable assigned in the for loop
+                       /* for (var j = 0, col; col = row.cells[j]; j++) {*/
+                            if(key == "chamberNumber" || key == "slots")
+                            {
+                                console.log(key+"  key  user[key] "+user[key]);
+                                break;
+                            }
+
+                           var row = table.rows[k];
+                           var col = row.cells[1];
+                            //iterate through columns
+                            //columns would be accessed using the "col" variable assigned in the for loop
+                            console.log(col.innerHTML+" html "+user.email_id);
+                            var td = document.createElement("td");
+                            var field = document.createElement("INPUT");
+                            field.type = "text";
+                            field.id = key;
+                            field.name = key;
+                            field.setAttribute("value",user[key]);
+                            field.setAttribute("onclick","return validate(this);");
+                            td.appendChild(field);
+                            var parnode = col.parentNode;
+                            parnode.replaceChild(td,col);
+                            console.log(user[key]+"   66666666666666666666  "+td.innerHTML);
+                            k++;
+                        //}
+                    //}
+                }
+                if(user.role == "employee")
+                {
+                    var tr = document.createElement("tr");
+                    var td1 = document.createElement("td");
+                    td1.innerHTML = "Chamber Number";
+                    var td2 = document.createElement("td");
+                    var field = document.createElement("INPUT");
+                    field.type = "text";
+                    field.id = "chamberNumber";
+                    field.name = "chamberNumber";
+                    field.setAttribute("value",user.chamberNumber);
+                    field.setAttribute("onclick","return validate(this);");
+                    td2.appendChild(field);
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    table.appendChild(tr);
+                }
+              /*  var row = table.rows;
                 //email id column
                 var columns = row[0].cells;
                 console.log(columns.length+" useremail "+user.email_id);
@@ -211,7 +293,7 @@ function readData() {
                 role.setAttribute("onclick","return validate();");
                 td.appendChild(role);
                 var parnode = columns[1].parentNode;
-                parnode.replaceChild(td,columns[1]);
+                parnode.replaceChild(td,columns[1]);*/
             }
         }
     });
@@ -496,21 +578,30 @@ function ShowSlots()
             if(user.email_id == userEmailId)
             {
                 var slots = user.slots;
-                var tr = document.createElement("tr");
+
                 for(var j=0;j<slots.length;j++)
                 {
+                    var tr = document.createElement("tr");
                     var slotRow = slots[j];
                     var td1 = document.createElement("td");
                     td1.innerHTML = slotRow.tokenId;
+                    console.log(slotRow.tokenId);
                     tr.appendChild(td1);
                     var td2 = document.createElement("td");
                     td2.innerHTML = slotRow.slotDateTime;
                     tr.appendChild(td2);
                     var td3 = document.createElement("td");
+                    if(user.role == "customer")
                     td3.innerHTML = slotRow.custBank;
+                    else
+                    td3.innerHTML = user.bankName;
+
                     tr.appendChild(td3);
                     var td4 = document.createElement("td");
+                    if(user.role == "customer")
                     td4.innerHTML = slotRow.custBankBranch;
+                    else
+                    td4.innerHTML = user.bankBranch;
                     tr.appendChild(td4);
                     table.appendChild(tr);
                 }
@@ -520,4 +611,120 @@ function ShowSlots()
 
     });
 
+}
+
+function showTableCells()
+{
+    var table = document.getElementById("userDetails");
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        //iterate through rows
+        //rows would be accessed using the "row" variable assigned in the for loop
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            //iterate through columns
+            //columns would be accessed using the "col" variable assigned in the for loop
+            console.log("666666666666666666666  "+col.innerHTML);
+        }
+    }
+}
+function loadTodaysSlots()
+{
+    loadJSON(function(response)
+    {
+        var userEmail = localStorage.getItem("userEmailId");
+        var json_array = JSON.parse(response);
+        if(localStorage.hasOwnProperty("jsonObject"))
+        {
+            json_array = JSON.parse(localStorage.getItem("jsonObject"));
+        }
+        else
+        {
+          localStorage.setItem("jsonObject",JSON.stringify(json_array));
+        }
+        console.log(json_array);
+        for(var i=0;i<json_array.user.length;i++)
+        {
+            var user = json_array.user[i];
+            if(user.email_id == userEmail && user.role == "employee")
+            {
+                var empChamber = user.chamberNumber;
+              //getCustomers(empChamber,json_array);
+                var table = document.getElementById("customersSlots");
+                for(var i=0;i<json_array.user.length;i++)
+                {
+                    //console.log("row appended");
+
+                    var cust = json_array.user[i];
+                    if(cust.role == "customer")
+                    {
+                        //console.log("row appended");
+
+                        for(var j=0;j<cust.slots.length;j++)
+                        {
+                            //console.log("row appended");
+
+                            var custSlots = cust.slots[j];
+                            if(custSlots.chamberNumber == empChamber)
+                            {
+                                var tr = document.createElement("tr");
+                                var td1 = document.createElement("td");
+                                td1.innerHTML = custSlots.tokenId;
+                                var td2 = document.createElement("td");
+                                td2.innerHTML = custSlots.custName;
+                                var td3 = document.createElement("td");
+                                td3.innerHTML = custSlots.slotDateTime;
+                                var td4 = document.createElement("td");
+                                td4.innerHTML = custSlots.accNumber;
+                                tr.appendChild(td1);
+                                tr.appendChild(td2);
+                                tr.appendChild(td3);
+                                tr.appendChild(td4);
+                                table.appendChild(tr);
+                                console.log("row appended");
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+
+    });
+}
+function getCustomers(empChamber,json_array)
+{
+        var table = document.getElementById("customersSlots");
+        for(var i=0;i<json_array.user.length;i++)
+        {
+            var cust = json_array.user[i];
+            if(cust.role == "customer")
+            {
+
+               for(var j=0;j<cust.slots.length;j++)
+               {
+
+                   var custSlots = cust.slots[j];
+                   if(custSlots.chamberNumber == empChamber)
+                   {
+                       var tr = document.createElement("tr");
+                       var td1 = document.createElement("td");
+                       td1.innerHTML = custSlots.tokenId;
+                       var td2 = document.createElement("td");
+                       td2.innerHTML = custSlots.custName;
+                       var td3 = document.createElement("td");
+                       td3.innerHTML = custSlots.slotDateTime;
+                       var td4 = document.createElement("td");
+                       td4.innerHTML = custSlots.accNumber;
+                       tr.appendChild(td1);
+                       tr.appendChild(td2);
+                       tr.appendChild(td3);
+                       tr.appendChild(td4);
+                       table.appendChild(tr);
+
+                   }
+
+               }
+            }
+        }
 }
