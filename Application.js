@@ -678,7 +678,14 @@ function loadTodaysSlots()
                                 tr.appendChild(td2);
                                 tr.appendChild(td3);
                                 tr.appendChild(td4);
+                                var checkBox = document.createElement("Input");
+                                checkBox.setAttribute("type","checkbox");
+                                checkBox.setAttribute("value","custAccessed");
+                                checkBox.text = "custAccessed";
+
+                                tr.appendChild(checkBox);
                                 table.appendChild(tr);
+
                                 console.log("row appended");
 
                             }
@@ -720,6 +727,7 @@ function getCustomers(empChamber,json_array)
                        tr.appendChild(td2);
                        tr.appendChild(td3);
                        tr.appendChild(td4);
+                       tr.appendChild(checkBox);
                        table.appendChild(tr);
 
                    }

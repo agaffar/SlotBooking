@@ -80,7 +80,7 @@ div.login
     border: 2px solid #1edda2;
     border-radius: 12px;
 }
-div.login input[type=email],input[type=password] {
+div.login input[type=email],div.login input[type=password] {
     width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
